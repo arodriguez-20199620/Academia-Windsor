@@ -52,11 +52,15 @@ export const Navbar = () => {
             url: '/'
         },
         {
-            label: 'Nosotros',
-            url: '/nosotros'
+            label: 'Planes',
+            url: '/planes'
         },
         {
-            label: 'Contacto',
+            label: 'Tutores',
+            url: '/tutores'
+        },
+        {
+            label: 'Tutores',
             url: '/contacto'
         }
     ];
