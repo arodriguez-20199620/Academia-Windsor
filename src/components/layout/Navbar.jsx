@@ -60,7 +60,7 @@ export const Navbar = () => {
             url: '/tutores'
         },
         {
-            label: 'Tutores',
+            label: 'Contacto',
             url: '/contacto'
         }
     ];
