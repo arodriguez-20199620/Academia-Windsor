@@ -1,17 +1,25 @@
-import { Button } from 'primereact/button';
+import { Suspense } from 'react';
+import { useRoutes } from 'react-router-dom';
+import { Navbar, Footer } from './components/layout';
+import routes from './routes'
 import "./App.css"
 
-function App() {
+const Routes = () => {
+  const routing = useRoutes(routes);
+  return routing;
+};
 
+
+const App = () => {
   return (
     <>
-
-      <Button label="Submit" className='bg-pink-400 border-none outline-none ring-0' />
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Navbar />
+      <Suspense fallback={null}>
+        <Routes />
+      </Suspense>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App
