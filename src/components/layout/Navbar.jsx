@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { favicon } from '../../assets/img';
+import { logo } from '../../assets/img';
 import { MenuIcon } from '../icons';
 import { Link } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
@@ -65,7 +65,7 @@ export const Navbar = () => {
         }
     ];
 
-    const start = <img alt="logo" src={favicon} className="mr-4 h-20 lg:h-32 py-1.5" />;
+    const start = <img alt="logo" src={logo} className="mr-4 h-20 lg:h-32 py-1.5" />;
 
     const end = (
         <div className="hidden md:flex space-x-8">
