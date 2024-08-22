@@ -1,6 +1,6 @@
 import nosotros1 from './nosotros1.jpg';
 import nosotros2 from './nosotros2.jpg';
-import alemania from './icons/alemania.png';
+import alemania from 'src/assets/img/icons/alemania.png'; // Ruta absoluta
 import espanol from './icons/español.png';
 import francia from './icons/francia.png';
 import italiano from './icons/italiano.png';
