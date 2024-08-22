@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaInstagram, FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const ContactPage = () => {
+    useDocumentTitle('Academia Windsor | Contacto')
     const handleInstagramClick = () => {
         window.open('https://www.instagram.com/academiawindsor.gt', '_blank');
     };
