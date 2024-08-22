@@ -1,4 +1,3 @@
-import logo from './icons/logo.png';
 import nosotros1 from './nosotros1.jpg';
 import nosotros2 from './nosotros2.jpg';
 import alemania from './icons/alemania.png';
@@ -12,6 +11,7 @@ import tutoring from './tutoring.jpg'
 import persona1 from './persona1.jpg'
 import persona2 from './persona2.jpg'
 import persona3 from './persona3.jpg'
+import logo from './icons/logo.png';
 
 export {
     logo,
