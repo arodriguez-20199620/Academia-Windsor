@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card } from 'primereact/card';
 import { alemania, espanol, francia, italiano, portugues, reinoUnido } from '../../../assets/img';
 

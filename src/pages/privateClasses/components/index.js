@@ -1,0 +1,6 @@
+export * from './HeroSection'
+export * from './ServicesSection'
+export * from './BenefitsSection'
+export * from './ProcessSection'
+export * from './FAQSection'
+export * from './ContactSection'

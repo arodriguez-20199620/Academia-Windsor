@@ -7,6 +7,11 @@ import francia from './icons/francia.png';
 import italiano from './icons/italiano.png';
 import portugues from './icons/Portugués.png';
 import reinoUnido from './icons/reinoUnido.png';
+import corporate from './corporate.jpg'
+import tutoring from './tutoring.jpg'
+import persona1 from './persona1.jpg'
+import persona2 from './persona2.jpg'
+import persona3 from './persona3.jpg'
 
 export {
     logo,
@@ -17,5 +22,10 @@ export {
     francia,
     italiano,
     portugues,
-    reinoUnido
+    reinoUnido,
+    corporate,
+    tutoring,
+    persona1,
+    persona2,
+    persona3
 };

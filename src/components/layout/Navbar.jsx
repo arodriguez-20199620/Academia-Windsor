@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { logo } from '../../assets/img';
 import { MenuIcon } from '../icons';
 import { Link } from 'react-router-dom';
@@ -27,6 +27,18 @@ export const Navbar = () => {
         };
     }, []);
 
+    useEffect(() => {
+        if (sidebarVisible) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [sidebarVisible]);
+
     const itemRenderer = (item, index) => (
         <Link
             key={index}
@@ -34,10 +46,11 @@ export const Navbar = () => {
             className={clsx(
                 "flex align-items-center p-menuitem-link cursor-pointer transition duration-300",
                 {
-                    "text-gray-800 hover:text-golden-yellow": !isScrolled,
+                    "text-gray-800 hover:text-light-sky-blue": !isScrolled,
                     "text-white hover:text-black": isScrolled
                 }
             )}
+            onClick={() => setSidebarVisible(false)}
         >
             {item.icon && <span className={item.icon} />}
             <span className="mx-2">{item.label}</span>
@@ -74,15 +87,43 @@ export const Navbar = () => {
     );
 
     const mobileMenu = (
-        <Sidebar visible={sidebarVisible} onHide={() => setSidebarVisible(false)}>
-            {items.map(itemRenderer)}
+        <Sidebar
+            visible={sidebarVisible}
+            onHide={() => setSidebarVisible(false)}
+            showCloseIcon={true}
+            className="p-sidebar-lg z-50"
+            modal={true}
+            closeOnEscape={true}
+        >
+            <div className="flex justify-between items-center px-4 py-2">
+                <div className="text-xl font-bold">Menú</div>
+                <Button
+                    icon="pi pi-times"
+                    className="p-button-text"
+                    onClick={() => setSidebarVisible(false)}
+                />
+            </div>
+            <div className="flex flex-col space-y-4 mt-4">
+                {items.map((item, index) => (
+                    <Link
+                        key={index}
+                        to={item.url}
+                        className="flex items-center py-3 px-4 text-lg text-gray-800 hover:text-light-sky-blue transition duration-300"
+                        onClick={() => setSidebarVisible(false)}
+                    >
+                        {item.icon && <span className={`mr-3 ${item.icon}`} />}
+                        <span>{item.label}</span>
+                        {item.badge && <Badge className="ml-auto" value={item.badge} />}
+                    </Link>
+                ))}
+            </div>
         </Sidebar>
     );
 
     return (
         <div className={clsx('w-full shadow-md sticky top-0 z-10 transition-colors duration-300', {
             'bg-white': !isScrolled,
-            'bg-golden-yellow text-white': isScrolled
+            'bg-sky-blue text-white': isScrolled
         })}>
             {mobileMenu}
             <Menubar
@@ -90,7 +131,17 @@ export const Navbar = () => {
                 end={
                     <>
                         <div className="md:hidden">
-                            <Button icon={<MenuIcon size={32} />} onClick={() => setSidebarVisible(true)} className="p-button-text w-14" />
+                            <Button
+                                icon={<MenuIcon size={32} />}
+                                onClick={() => setSidebarVisible(true)}
+                                className={clsx(
+                                    'p-button-text w-14',
+                                    {
+                                        'text-dark-blue': !isScrolled,
+                                        'text-white': isScrolled
+                                    }
+                                )}
+                            />
                         </div>
                         {end}
                     </>

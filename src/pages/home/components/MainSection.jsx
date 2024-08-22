@@ -3,7 +3,7 @@ import { ChipSection } from "./ChipSection";
 export const MainSection = () => {
     return (
         <>
-            <div className="py-12 sm:py-24">
+            <div className="py-12 sm:py-24 bg-dark-blue ">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mb-8 flex justify-center">
                         <p
@@ -12,10 +12,10 @@ export const MainSection = () => {
                         </p>
                     </div>
                     <div className="mx-auto max-w-4xl text-center">
-                        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
                             Academia Windsor
                         </h1>
-                        <p className="mt-6 text-md leading-8 text-gray-700">
+                        <p className="mt-6 text-md leading-8 text-white">
                             ¡Bienvenidos a nuestra academia de idiomas! Somos un centro dedicado a proporcionar una experiencia educativa de alta calidad en inglés, francés y alemán. Nuestro compromiso es ayudarte a alcanzar tus metas lingüísticas de manera efectiva y divertida.
                         </p>
                         <ChipSection />

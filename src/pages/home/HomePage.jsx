@@ -1,5 +1,5 @@
-import useDocumentTitle from "../../hooks/useDocumentTitle"
 import { MainSection, LanguagesOfferedSection, HeroSection, LanguagePromoSection } from "./components"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 const HomePage = () => {
     useDocumentTitle('Academia Windsor | Inicio')
